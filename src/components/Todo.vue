@@ -1,7 +1,7 @@
 <template>
   <v-container fill-height>
     <v-layout justify-center>
-      <v-flex xs6>
+      <v-flex xs12 md6>
         <h3 class="display-3">Mama Todos</h3>
         <v-alert
           :value="error"
@@ -23,7 +23,7 @@
           <v-subheader>
             {{ showItems.length }} items
             <v-spacer></v-spacer>
-            <div class="text-xs-center">
+            <div class="text-xs-center hidden-sm-and-down">
               <v-chip outline color="primary"
                 :selected="filter === 'all'"
                 @click="toggleFilter('all')">All</v-chip>
@@ -111,6 +111,7 @@ export default {
         title: this.input,
         status: false
       })
+      this.error = false
       this.input = ''
     },
     toggleFilter (v) {
