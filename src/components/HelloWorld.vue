@@ -16,6 +16,7 @@
           label="What needs to be done?"
           append-icon="keyboard"
           v-on:keyup.13="submit"
+          @keydown="error = false"
           v-model="input"
         ></v-text-field>
         <v-list subheader two-line class="elevation-3">
